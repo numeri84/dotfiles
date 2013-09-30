@@ -38,7 +38,7 @@ set autoindent          " autoindentを有効にする
 set smartindent         " 新しい行を開始した時にインデントを揃える
 set shiftwidth=4        " インデント幅
 set tabstop=4            " tab幅
-set expandtab           " ソフトタブを有効に
+"set expandtab           " ソフトタブを有効に
 
 filetype on
 autocmd FileType c,cpp
@@ -72,6 +72,7 @@ NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/unite.vim'
 
 filetype plugin indent on
 
