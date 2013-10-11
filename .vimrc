@@ -45,6 +45,8 @@ autocmd FileType c,cpp
 autocmd BufNewFile,BufRead *.cu set filetype=c "*.cuファイルをCファイルとして認識
 set cindent
 
+autocmd BufNewFile,BufRead *.md set filetype=markdown
+
 colorscheme molokai
 syntax on
 
@@ -73,6 +75,10 @@ NeoBundle 'Shougo/vimproc'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Lokaltog/powerline'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'FuzzyFinder'
+NeoBundle 'L9'
 
 filetype plugin indent on
 
@@ -133,3 +139,5 @@ nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
 nnoremap <silent> ,uu :<C-u>Unite file_mru buffer<CR>
 
+" previm
+" let g:previm_open_cmd = 'open -a safari'
