@@ -180,3 +180,6 @@ let g:jedi#popup_select_first = 0
 let g:jedi#auto_initialization = 1
 let g:jedi#popup_on_dot = 1
 let g:jedi#auto_vim_configuration = 1
+
+set runtimepath+=~/dotfiles/.vim/after/ftplugin/
+
