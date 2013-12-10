@@ -29,6 +29,7 @@ set list                                " 不可視文字表示
 set listchars=tab:>.,trail:_,extends:>,precedes:<       " 不可視文字の表示形式
 set display=uhex                        " 印字不可能文字を16進数で表示
 set cursorline                          " カーソル行をハイライト
+set cursorcolumn
 
 " 全角スペースの表示
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
@@ -38,7 +39,7 @@ set autoindent          " autoindentを有効にする
 set smartindent         " 新しい行を開始した時にインデントを揃える
 set shiftwidth=4        " インデント幅
 set tabstop=4            " tab幅
-"set expandtab           " ソフトタブを有効に
+set expandtab           " ソフトタブを有効に
 
 filetype on
 autocmd FileType c,cpp
@@ -46,6 +47,7 @@ autocmd BufNewFile,BufRead *.cu set filetype=c "*.cuファイルをCファイル
 set cindent
 
 autocmd BufNewFile,BufRead *.md set filetype=markdown
+" autocmd BufNewfile,BufRead *.txt set filetype=hybrid
 
 source ~/dotfiles/.vimrc.colors
 
@@ -89,6 +91,9 @@ NeoBundle 'Shougo/vimproc', {
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'Shougo/neocomplete'
 NeoBundle 'davidhalter/jedi-vim'
+NeoBundle 'AndrewRadev/switch.vim'
+NeoBundle 'tpope/vim-rails'
+NeoBundle 'HybridText'
 
 filetype plugin indent on
 
@@ -130,7 +135,7 @@ inoremap <expr><C-g>	neocomplcache#undo_completion()
 " <CR>: close popup and save indent
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
-	return neocomplcache#smart_close_popup() . "\<CR>"
+	return pumvisible() ? neocomplcache#smart_close_popup() : "\<CR>"
 endfunction
 
 " <TAB>: completion
@@ -149,8 +154,10 @@ inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 "inoremap <C-h> <Left>
 inoremap <C-l> <Right>
+inoremap <C-f> <Right>
 inoremap <C-h> <BS>
 inoremap <C-b> <Left>
+inoremap <C-d> <Del>
 
 " Unite
 "let g:unite_enable_start_insert = 1
@@ -178,8 +185,13 @@ endif
 let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
 let g:jedi#popup_select_first = 0
 let g:jedi#auto_initialization = 1
-let g:jedi#popup_on_dot = 1
+"let g:jedi#popup_on_dot = 1
 let g:jedi#auto_vim_configuration = 1
 
 set runtimepath+=~/dotfiles/.vim/after/ftplugin/
 
+" vim-rails
+
+
+" Hybridtext
+au BufRead,BufNewFile *.txt set syntax=hybrid
