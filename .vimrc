@@ -94,6 +94,7 @@ NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'AndrewRadev/switch.vim'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'HybridText'
+NeoBundle 'mattn/emmet-vim'
 
 filetype plugin indent on
 
@@ -195,3 +196,9 @@ set runtimepath+=~/dotfiles/.vim/after/ftplugin/
 
 " Hybridtext
 au BufRead,BufNewFile *.txt set syntax=hybrid
+
+" emmet
+let g:user_emmet_settings = {
+\    'lang' : 'ja'
+\ }
+
