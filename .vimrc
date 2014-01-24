@@ -60,7 +60,6 @@ set cindent
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 " autocmd BufNewfile,BufRead *.txt set filetype=hybrid
 
-source ~/dotfiles/.vimrc.colors
 
 " insertモード時、ステータスラインのカラーを変更
 augroup InsertHook
@@ -69,6 +68,11 @@ autocmd InsertEnter * highlight StatusLine guifg=#ccdc90 guibg=#2E4340
 autocmd InsertLeave * highlight StatusLine guifg=#2E4340 guibg=#ccdc90
 augroup END
 
+" ~~~~~~~~~
+" 色
+if filereadable(expand('~/dotfiles/.vimrc.colors'))
+    source ~/dotfiles/.vimrc.colors
+endif
 
 " ~~~~~~~~~
 " neobundle
