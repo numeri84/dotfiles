@@ -45,10 +45,13 @@ smap <silent><C-F> <Plug>(neosnippet_register_oneshot_snippet)
 "
 " Unite
 "
-"let g:unite_enable_start_insert = 1
+let g:unite_enable_start_insert = 1
 let g:unite_source_history_yank_enable = 1
 let g:unite_source_file_mru_limit = 200
+
+"
 " VimShell
+"
 let g:vimshell_prompt = "% "
 let g:vimshell_secondary_prompt = "> "
 let g:vimshell_user_prompt = 'getcwd()'
@@ -71,17 +74,23 @@ let g:jedi#auto_initialization = 1
 "let g:jedi#popup_on_dot = 1
 let g:jedi#auto_vim_configuration = 1
 
-set runtimepath+=~/dotfiles/.vim/after/ftplugin/
 
 "
 " vim-rails
 "
 
+" :Rc (:Rm :Rv) hoge で開く
+autocmd User Rails.controller* Rnavcommand api app/controllers/api -glob=**/* -suffix=_controller.rb
+autocmd User Rails.controller* Rnavcommand tmpl app/controllers/tmpl -glob=**/* -suffix=_controller.rb
+autocmd User Rails Rnavcommand config config  -glob=*.*  -suffix= -default=routs.rb
+autocmd User Rails nmap :<C-u>Rcontroller :<C-u>Rc
+autocmd User Rails nmap :<C-u>Rmodel :<C-u>Rm
+autocmd User Rails nmap :<C-u>Rview :<C-u>Rv
 
 "
 " Hybridtext
 "
-au BufRead,BufNewFile *.txt set syntax=hybrid
+au BufRead,BufNewFile *.txt set syntax=hybrid " なんか使えてない？
 
 "
 " emmet
@@ -97,3 +106,10 @@ nnoremap <Space>m :<C-u>Switch<CR>
 if filereadable(expand('~/.vim/settings/switch/switch_settings.vim'))
     source ~/.vim/settings/switch/switch_settings.vim
 end
+
+" 
+" NERD-Tree
+"
+
+nnoremap :nt :NERDTreeToggle<CR>
+let g:NERDTreeShowHidden=1 " 隠しファイルを表示

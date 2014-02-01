@@ -50,4 +50,4 @@ inoremap <C-f> <Right>
 inoremap <C-h> <BS>
 inoremap <C-b> <Left>
 inoremap <C-d> <Del>
-
+inoremap <C-e> <Esc>A

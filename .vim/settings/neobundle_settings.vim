@@ -25,6 +25,7 @@ NeoBundle 'AndrewRadev/switch.vim'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'HybridText'
 NeoBundle 'mattn/emmet-vim'
+NeoBundle 'scrooloose/nerdtree'
 
 filetype plugin indent on
 

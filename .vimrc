@@ -60,6 +60,7 @@ set cindent
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 " autocmd BufNewfile,BufRead *.txt set filetype=hybrid
 
+set runtimepath+=~/dotfiles/.vim/after/ftplugin/
 
 " insertモード時、ステータスラインのカラーを変更
 augroup InsertHook
