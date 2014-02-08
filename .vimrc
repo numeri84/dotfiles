@@ -52,16 +52,6 @@ set shiftwidth=4        " インデント幅
 set tabstop=4            " tab幅
 set expandtab           " ソフトタブを有効に
 
-filetype on
-autocmd FileType c,cpp
-autocmd BufNewFile,BufRead *.cu set filetype=c "*.cuファイルをCファイルとして認識
-set cindent
-
-autocmd BufNewFile,BufRead *.md set filetype=markdown
-" autocmd BufNewfile,BufRead *.txt set filetype=hybrid
-
-set runtimepath+=~/dotfiles/.vim/after/ftplugin/
-
 " insertモード時、ステータスラインのカラーを変更
 augroup InsertHook
 autocmd!
@@ -109,7 +99,18 @@ endif
 
 " ~~~~~~~~~
 " filetype settings
+set runtimepath+=~/dotfiles/.vim/after
+
+filetype on
+filetype plugin on
+autocmd FileType c,cpp
+autocmd BufNewFile,BufRead *.cu set filetype=c "*.cuファイルをCファイルとして認識
+set cindent
+
+autocmd BufNewFile,BufRead *.md set filetype=markdown
+" autocmd BufNewfile,BufRead *.txt set filetype=hybrid
 
 if filereadable(expand('~/.vim/settings/filetype.vim'))
     source ~/.vim/settings/filetype.vim
 endif
+
