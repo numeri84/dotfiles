@@ -8,6 +8,8 @@
 
 " ~~~~~~~~~
 " default setting
+set runtimepath+=~/dotfiles/.vim/settings
+set runtimepath+=~/dotfiles/.vim/after
 
 set encoding=utf-8                      " デフォルトエンコーディング
 
@@ -99,7 +101,6 @@ endif
 
 " ~~~~~~~~~
 " filetype settings
-set runtimepath+=~/dotfiles/.vim/after
 
 filetype on
 filetype plugin on
@@ -110,7 +111,7 @@ set cindent
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 " autocmd BufNewfile,BufRead *.txt set filetype=hybrid
 
-if filereadable(expand('~/.vim/settings/filetype.vim'))
-    source ~/.vim/settings/filetype.vim
-endif
+"if filereadable(expand('~/.vim/settings/filetype.vim'))
+"    source ~/.vim/settings/filetype.vim
+"endif
 

@@ -7,7 +7,7 @@
 " neocomplcache
 "
 let g:acp_enableAtStartup=0 " Disable AutoComplPop
-let g:neocomplcache_enable_at_startup=0 " 起動時に有効にする => 切りましたンゴ
+let g:neocomplcache_enable_at_startup=0 " 起動時に有効にする => 無効にしたンゴ
 let g:neocomplcache_min_syntax_length=3 " 補完対象となるキーワードの最小長さ
 let g:neocomplcache_lock_buffer_name_pattern='\*ku\*' " neocomplcacheを自動的にロックするバッファ名のパターン
 let g:neocomplcache_enable_ignore_case=1 " 補完候補検索時に、大文字小文字の区別を無視する
