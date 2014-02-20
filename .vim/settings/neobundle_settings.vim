@@ -2,7 +2,6 @@
 " NeoBundleでプラグインうんたらかんたら
 
 NeoBundle 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Lokaltog/powerline'
