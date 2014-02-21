@@ -50,6 +50,12 @@ nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
 nnoremap <silent> ,uu :<C-u>Unite file_mru buffer<CR>
 
+" ~~~~~~~~~
+" VimFiler remaps
+nnoremap <silent> ,vf :<C-u>VimFiler<CR>
+
+" ~~~~~~~~~
+" unite-ssh remaps
 
 " ~~~~~~~~~
 " 自分が使いやすいリマップ関連
@@ -66,3 +72,6 @@ inoremap <C-h> <BS>
 inoremap <C-b> <Left>
 inoremap <C-d> <Del>
 inoremap <C-e> <Esc>A
+
+" <Space><Space>で.vimrc再読み込み
+nnoremap <Space><Space> :source ~/.vimrc<CR>

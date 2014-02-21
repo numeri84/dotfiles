@@ -13,6 +13,8 @@ set runtimepath+=~/dotfiles/.vim/after
 
 set encoding=utf-8                      " デフォルトエンコーディング
 
+set imdisable                           " 挿入モードから抜ける際にIMEをOff
+
 set nocompatible                        " vi互換なし
 set noswapfile                          " スワップファイルを作らない
 set backspace=indent,eol,start          " backspaceでなんでも削除
@@ -84,8 +86,8 @@ endif
 " ~~~~~~~~~
 " plugin settings
 "
-if filereadable(expand('~/.vim/settings/neobundle_settings.vim'))
-    source ~/.vim/settings/neobundle_settings.vim
+if filereadable(expand('~/.vim/neobundle_settings.vim'))
+    source ~/.vim/neobundle_settings.vim
 endif
 
 if filereadable(expand('~/.vim/settings/plugin.vim'))

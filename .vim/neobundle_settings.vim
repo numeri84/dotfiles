@@ -4,6 +4,9 @@
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/unite-ssh'
+NeoBundle 'Shougo/neomru.vim'
+NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle 'Lokaltog/powerline'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'FuzzyFinder'
@@ -25,6 +28,8 @@ NeoBundle 'tpope/vim-rails'
 NeoBundle 'HybridText'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'vim-jp/vital.vim'
+NeoBundle 'thinca/vim-showtime'
 
 filetype plugin indent on
 
