@@ -110,7 +110,7 @@ autocmd FileType c,cpp
 autocmd BufNewFile,BufRead *.cu set filetype=c "*.cuファイルをCファイルとして認識
 set cindent
 
-autocmd BufNewFile,BufRead *.md set filetype=markdown
+autocmd BufNewFile,BufRead *.md set filetype=Markdown
 " autocmd BufNewfile,BufRead *.txt set filetype=hybrid
 
 "if filereadable(expand('~/.vim/settings/filetype.vim'))

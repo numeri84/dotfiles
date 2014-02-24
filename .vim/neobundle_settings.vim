@@ -25,11 +25,13 @@ NeoBundle 'Shougo/neocomplete'
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'AndrewRadev/switch.vim'
 NeoBundle 'tpope/vim-rails'
-NeoBundle 'HybridText'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'vim-jp/vital.vim'
 NeoBundle 'thinca/vim-showtime'
+NeoBundle 'tyru/open-browser.vim'
+NeoBundle 'kannokanno/previm'
+NeoBundle 'kakkyz81/evervim'
 
 filetype plugin indent on
 

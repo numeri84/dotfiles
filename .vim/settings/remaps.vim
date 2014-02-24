@@ -58,6 +58,10 @@ nnoremap <silent> ,vf :<C-u>VimFiler<CR>
 " unite-ssh remaps
 
 " ~~~~~~~~~
+" previm remaps
+nnoremap <silent> ,pv :<C-u>PrevimOpen<CR>
+
+" ~~~~~~~~~
 " 自分が使いやすいリマップ関連
 
 set whichwrap=b,s,h,l,<,>,[,]           " カーソルを行頭、行末で止まらないようにする
@@ -75,3 +79,9 @@ inoremap <C-e> <Esc>A
 
 " <Space><Space>で.vimrc再読み込み
 nnoremap <Space><Space> :source ~/.vimrc<CR>
+
+" ~~~~~~~~~
+" evervim remaps
+nnoremap <silent> ,el :<C-u>EvervimNotebookList<CR>
+nnoremap <silent> ,en :<C-u>EvervimCreateNote<CR>
+

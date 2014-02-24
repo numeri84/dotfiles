@@ -55,7 +55,7 @@ let g:vimshell_user_prompt = 'getcwd()'
 "
 " previm
 "
-" let g:previm_open_cmd = 'open -a safari'
+"let g:previm_open_cmd = 'open -a Safari'
 
 "
 " jedi.vim
@@ -86,11 +86,6 @@ autocmd User Rails nmap :<C-u>Rmodel :<C-u>Rm
 autocmd User Rails nmap :<C-u>Rview :<C-u>Rv
 
 "
-" Hybridtext
-"
-au BufRead,BufNewFile *.txt set syntax=hybrid " なんか使えてない？
-
-"
 " emmet
 "
 let g:user_emmet_settings = {
@@ -111,3 +106,10 @@ end
 
 nnoremap :nt :NERDTreeToggle<CR>
 let g:NERDTreeShowHidden=1 " 隠しファイルを表示
+
+" 
+" evervim
+"
+python sys.path.append('/usr/local/lib/python2.7/site-packages')
+
+let g:evervim_devtoken='S=s43:U=45339f:E=14bba5b1e5a:C=14462a9f25e:P=1cd:A=en-devtoken:V=2:H=3190c5db6bee397dc764040ffe57e4d8'
