@@ -85,3 +85,4 @@ nnoremap <Space><Space> :source ~/.vimrc<CR>
 nnoremap <silent> ,el :<C-u>EvervimNotebookList<CR>
 nnoremap <silent> ,en :<C-u>EvervimCreateNote<CR>
 
+
