@@ -113,3 +113,10 @@ let g:NERDTreeShowHidden=1 " 隠しファイルを表示
 python sys.path.append('/usr/local/lib/python2.7/site-packages')
 
 let g:evervim_devtoken='S=s43:U=45339f:E=14bba5b1e5a:C=14462a9f25e:P=1cd:A=en-devtoken:V=2:H=3190c5db6bee397dc764040ffe57e4d8'
+
+" 
+" clang_complete
+"
+let g:clang_complete_getopts_ios_default_options = '-fblocks -fobjc-arc -D __IPHONE_OS_VERSION_MIN_REQUIRED=40300'
+let g:clang_complete_getopts_ios_sdk_directory = '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk'
+let g:clang_complete_getopts_ios_ignore_directories = ["^\.git", "\.xcodeproj"]

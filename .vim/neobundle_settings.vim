@@ -33,6 +33,10 @@ NeoBundle 'thinca/vim-showtime'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'kakkyz81/evervim'
+NeoBundle 'git://github.com/Rip-Rip/clang_complete.git'
+NeoBundle 'git://github.com/tokorom/clang_complete-getopts-ios.git'
+NeoBundle 'mattn/gist-vim'
+NeoBundle 'mattn/webapi-vim'
 
 filetype plugin indent on
 

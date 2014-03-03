@@ -28,14 +28,13 @@ set nobackup                            " 同上
 
 syntax on
 
-" OSのクリップボードを使用
-set clipboard+=unnamed
 
 " ターミナルでマウスを使用できるようにする
 set mouse=a
 set guioptions+=a
 set ttymouse=xterm2
 
+set clipboard+=unnamed                  " OSのクリップボードを使用
 set laststatus=2                        " 常にステータスラインを表示
 set ruler                               " カーソル位置
 set showmatch                           " 括弧の対応をハイライト
@@ -45,7 +44,10 @@ set listchars=tab:>.,trail:_,extends:>,precedes:<       " 不可視文字の表�
 set display=uhex                        " 印字不可能文字を16進数で表示
 set cursorline                          " カーソル行をハイライト
 set cursorcolumn
-
+set laststatus=2
+set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=\ (%v,%l)/%L%8P\
+                                        " ステータスラインにエンコーディング、
+                                        " フォーマット表示
 " 全角スペースの表示
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
 match ZenkakuSpace /　/
@@ -56,18 +58,59 @@ set shiftwidth=4        " インデント幅
 set tabstop=4            " tab幅
 set expandtab           " ソフトタブを有効に
 
-" insertモード時、ステータスラインのカラーを変更
-augroup InsertHook
-autocmd!
-autocmd InsertEnter * highlight StatusLine guifg=#ccdc90 guibg=#2E4340
-autocmd InsertLeave * highlight StatusLine guifg=#2E4340 guibg=#ccdc90
-augroup END
+"" insertモード時、ステータスラインのカラーを変更
+"augroup InsertHook
+"autocmd!
+"autocmd InsertEnter * highlight StatusLine guifg=#ccdc90 guibg=#2E4340
+"autocmd InsertLeave * highlight StatusLine guifg=#2E4340 guibg=#ccdc90
+"augroup END
 
 " ~~~~~~~~~
 " 色
 if filereadable(expand('~/dotfiles/.vimrc.colors'))
     source ~/dotfiles/.vimrc.colors
 endif
+
+" IMEの状態に応じたカーソル色を設定
+" 動いてない？
+if has('multi_byte_ime') || has('xim')
+    highlight CursorIM guifg=Orange guibg=NONE
+endif
+
+"
+" 挿入モードの時の色指定
+if !exists('g:hi_insert')
+    let g:hi_insert = 'highlight StatusLine guifg=White guibg=DarkCyan gui=none ctermbg=DarkCyan cterm=none'
+endif
+
+if has('syntax')
+    augroup InsertHook
+        autocmd!
+        autocmd InsertEnter * call s:StatusLine('Enter')
+        autocmd InsertLeave * call s:StatusLine('Leave')
+    augroup END
+endif
+
+let s:slhlcmd = ''
+function! s:StatusLine(mode)
+    if a:mode == 'Enter'
+        silent! let s:slhlcmd = 'highlight ' . s:GetHighlight('StatusLine')
+        silent exec g:hi_insert
+    else
+        highlight clear StatusLine
+        silent exec s:slhlcmd
+    endif
+endfunction
+
+function! s:GetHighlight(hi)
+    redir => hl
+    exec 'highlight '.a:hi
+    redir END
+    let hl = substitute(hl, '[\r\n]', '', 'g')
+    let hl = substitute(hl, 'xxx', '', '')
+    return hl
+endfunction
+
 
 " ~~~~~~~~~
 " neobundle
