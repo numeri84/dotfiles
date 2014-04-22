@@ -6,6 +6,7 @@ NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/unite-ssh'
+NeoBundle 'basyura/unite-rails'
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle 'Lokaltog/powerline'
@@ -37,6 +38,8 @@ NeoBundle 'git://github.com/Rip-Rip/clang_complete.git'
 NeoBundle 'git://github.com/tokorom/clang_complete-getopts-ios.git'
 NeoBundle 'mattn/gist-vim'
 NeoBundle 'mattn/webapi-vim'
+NeoBundle 'kana/vim-smartinput'
+NeoBundle 'cohama/vim-smartinput-endwise'
 
 filetype plugin indent on
 

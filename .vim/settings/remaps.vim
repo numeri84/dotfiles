@@ -51,6 +51,18 @@ nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
 nnoremap <silent> ,uu :<C-u>Unite file_mru buffer<CR>
 
 " ~~~~~~~~~
+" Unite-rails
+noremap :urc :<C-u>Unite rails/controller<CR>
+noremap :urm :<C-u>Unite rails/model<CR>
+noremap :urv :<C-u>Unite rails/view<CR>
+noremap :urh :<C-u>Unite rails/helper<CR>
+noremap :urd :<C-u>Unite rails/db<CR>
+noremap :urdb :<C-u>Unite rails/db<CR>
+noremap :urj :<C-u>Unite rails/javascript<CR>
+noremap :urjs :<C-u>Unite rails/javascript<CR>
+
+
+" ~~~~~~~~~
 " VimFiler remaps
 nnoremap <silent> ,vf :<C-u>VimFiler<CR>
 
