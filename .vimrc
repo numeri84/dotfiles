@@ -111,6 +111,36 @@ function! s:GetHighlight(hi)
     return hl
 endfunction
 
+" 
+" ウィンドウ分割関連
+nnoremap s <Nop>
+nnoremap ss :<C-u>sp<CR>
+nnoremap sv :<C-u>vs<CR>
+" ウィンドウ間移動
+nnoremap sj <C-w>j
+nnoremap sk <C-w>k
+nnoremap sl <C-w>l
+nnoremap sh <C-w>h
+nnoremap sw <C-w>w
+" ウィンドウ移動
+nnoremap sJ <C-w>J
+nnoremap sK <C-w>K
+nnoremap sL <C-w>L
+nnoremap sH <C-w>H
+nnoremap sr <C-w>r
+" タブ移動
+nnoremap sn gt
+nnoremap sp gT
+" ウィンドウサイズ
+nnoremap s= <C-w>=
+nnoremap so <C-w>_<C-w>|
+nnoremap sO <C-w>=
+" タブ関連？
+nnoremap sN :<C-u>bn<CR>
+nnoremap sP :<C-u>bp<CR>
+nnoremap st :<C-u>tabnew<CR>
+
+
 
 " ~~~~~~~~~
 " neobundle

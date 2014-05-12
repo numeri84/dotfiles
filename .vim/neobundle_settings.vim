@@ -40,6 +40,10 @@ NeoBundle 'mattn/gist-vim'
 NeoBundle 'mattn/webapi-vim'
 NeoBundle 'kana/vim-smartinput'
 NeoBundle 'cohama/vim-smartinput-endwise'
+NeoBundle 'hail2u/vim-css3-syntax'
+NeoBundle 'pangloss/html5.vim'
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'kchmck/vim-coffee-script'
 
 filetype plugin indent on
 

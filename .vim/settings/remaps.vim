@@ -49,18 +49,42 @@ nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
 nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
 nnoremap <silent> ,uu :<C-u>Unite file_mru buffer<CR>
+nnoremap sT :<C-u>Unite tab<CR>
 
 " ~~~~~~~~~
 " Unite-rails
+noremap :ur :<C-u>Unite rails/root<CR>
 noremap :urc :<C-u>Unite rails/controller<CR>
+noremap :urco :<C-u>Unite rails/controller<CR>
 noremap :urm :<C-u>Unite rails/model<CR>
 noremap :urv :<C-u>Unite rails/view<CR>
 noremap :urh :<C-u>Unite rails/helper<CR>
+noremap :url :<C-u>Unite rails/log<CR>
+noremap :urb :<C-u>Unite rails/bundle<CR>
+noremap :urr :<C-u>Unite rails/route<CR>
 noremap :urd :<C-u>Unite rails/db<CR>
 noremap :urdb :<C-u>Unite rails/db<CR>
 noremap :urj :<C-u>Unite rails/javascript<CR>
 noremap :urjs :<C-u>Unite rails/javascript<CR>
+noremap :urss :<C-u>Unite rails/stylesheets<CR>
+noremap :urcss :<C-u>Unite rails/stylesheets<CR>
+noremap :urcn :<C-u>Unite rails/config<CR>
 
+nnoremap <silent> ,urc :<C-u>Unite rails/controller<CR>
+nnoremap <silent> ,urco :<C-u>Unite rails/controller<CR>
+nnoremap <silent> ,urm :<C-u>Unite rails/model<CR>
+nnoremap <silent> ,urv :<C-u>Unite rails/view<CR>
+nnoremap <silent> ,urh :<C-u>Unite rails/helper<CR>
+nnoremap <silent> ,url :<C-u>Unite rails/log<CR>
+nnoremap <silent> ,urb :<C-u>Unite rails/bundle<CR>
+nnoremap <silent> ,urr :<C-u>Unite rails/route<CR>
+nnoremap <silent> ,urd :<C-u>Unite rails/db<CR>
+nnoremap <silent> ,urdb :<C-u>Unite rails/db<CR>
+nnoremap <silent> ,urj :<C-u>Unite rails/javascript<CR>
+nnoremap <silent> ,urjs :<C-u>Unite rails/javascript<CR>
+nnoremap <silent> ,urss :<C-u>Unite rails/stylesheet<CR>
+nnoremap <silent> ,urcss :<C-u>Unite rails/stylesheet<CR>
+nnoremap <silent> ,urcn :<C-u>Unite rails/config<CR>
 
 " ~~~~~~~~~
 " VimFiler remaps
