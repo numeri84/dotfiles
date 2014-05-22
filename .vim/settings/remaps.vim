@@ -3,43 +3,43 @@
 " ~~~~~~~~~
 " Plugin key-mappings
 
-" ~~~~~~~~~
-" neocomplete
-inoremap <expr><C-g> neocomplete#undo_completion()
-inoremap <expr><C-l> neocomplete#complete_common_string()
-" <TAB>: completeion.
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-    return pumvisible() ? neocomplete#close_popup() : "\<CR>"
-endfunction
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-
-
-"" ~~~~~~~~~
-"" neocomplcache
-"inoremap <expr><C-g>	neocomplcache#undo_completion()
-""inoremap <expr><C-l>	neocomplcache#complete_common_string()
-"
-"" Recommended key-mappings
-"" <CR>: close popup and save indent
-"inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-"function! s:my_cr_function()
-"	return pumvisible() ? neocomplcache#smart_close_popup() : "\<CR>"
-"endfunction
-"
-"" <TAB>: completion
-"inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-"
-"" <C-h>, <BS>: close popup and delete backword char
-"inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-"inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-"inoremap <expr><C-y> neocomplcache#close_popup()
-"inoremap <expr><C-e> neocomplcache#cancel_popup()
-
+if neobundle#is_installed('neocomplete')
+    " ~~~~~~~~~
+    " neocomplete
+    inoremap <expr><C-g> neocomplete#undo_completion()
+    inoremap <expr><C-l> neocomplete#complete_common_string()
+    " <TAB>: completeion.
+    inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+    " <CR>: close popup and save indent.
+    inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+    function! s:my_cr_function()
+        return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+    endfunction
+    " <C-h>, <BS>: close popup and delete backword char.
+    inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+    inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+elseif neobundle#is_installed('neocomplcache')
+    " ~~~~~~~~~
+    " neocomplcache
+    inoremap <expr><C-g>	neocomplcache#undo_completion()
+    "inoremap <expr><C-l>	neocomplcache#complete_common_string()
+    
+    " Recommended key-mappings
+    " <CR>: close popup and save indent
+    inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+    function! s:my_cr_function()
+    	return pumvisible() ? neocomplcache#smart_close_popup() : "\<CR>"
+    endfunction
+    
+    " <TAB>: completion
+    inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+    
+    " <C-h>, <BS>: close popup and delete backword char
+    inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+    inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+    inoremap <expr><C-y> neocomplcache#close_popup()
+    inoremap <expr><C-e> neocomplcache#cancel_popup()
+endif
 
 
 " ~~~~~~~~~

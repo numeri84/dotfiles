@@ -6,15 +6,22 @@
 "
 " neocomplete
 "
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-let g:neocomplete#sources#dictionary#dictionaries = {
-	\ 'default' : '',
-	\ 'vimshell' : $HOME.'/.vimshell_hist',
-	\ 'scheme' : $HOME.'/.gosh_completions'
-	\ }
+if neobundle#is_installed('neocomplete')
+    let g:neocomplete#enable_at_startup = 1
+    let g:neocomplete#enable_ignore_case = 1
+    let g:neocomplete#enable_smart_case = 1
+    let g:neocomplete#auto_completion_start_length = 3
+    let g:neocomplete#manual_completion_start_length = 0
+    let g:neocomplete#sources#syntax#min_keyword_length = 3
+    let g:neocomplete#min_keyword_length = 2
+    let g:neocomplete#enable_prefetch = 1
+    let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+    let g:neocomplete#sources#dictionary#dictionaries = {
+        \ 'default' : '',
+        \ 'vimshell' : $HOME.'/.vimshell_hist',
+        \ 'scheme' : $HOME.'/.gosh_completions'
+            \ }
+endif
 
 " 
 " neosnippet
@@ -65,11 +72,13 @@ let g:jedi#auto_vim_configuration = 0
 
 "" neocompleteとの連携
 autocmd FileType python setlocal omnifunc=jedi#completions
-if !exists('g:neocomplete#force_omni_input_patterns')
-    let g:neocomplete#force_omni_input_patterns = {}
-endif
+if neobundle#is_installed('neocomplete')
+    if !exists('g:neocomplete#force_omni_input_patterns')
+        let g:neocomplete#force_omni_input_patterns = {}
+    endif
 
-let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
+    let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
+end
 let g:jedi#popup_on_dot = 1
 
 
@@ -141,3 +150,30 @@ let g:Tex_FormatDependency_pdf = 'dvi,pdf'
 " vim-smartinput
 "
 call smartinput_endwise#define_default_rules()
+
+if neobundle#tap('vim-smartinput')
+    call neobundle#config({
+    \ 'autoload':{
+    \  'insert':1
+    \ }
+    \})
+
+    function! neobundle#tapped.hooks.on_post_source(bundle)
+        call smartinput_endwise#define_default_rules()
+    endfunction
+
+    call neobundle#untap()
+endif
+
+if neobundle#tap('vim-smartinput-endwise')
+    function! neobundle#tapped.hooks.on_post_source(bundle)
+        " neosnippet and neocomplete compatible
+        call smartinput#map_to_trigger('i', '<Plug>(vimrc_cr)', '<Enter>', '<Enter>')
+        imap <expr><CR> !pumvisible() ? "\<Plug>(vimrc_cr)" :
+            \ neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : 
+            \ neocomplete#close_popup()
+    endfunction
+    call neobundle#untap()
+endif
+
+echomsg "Plugin Settings Loaded." 

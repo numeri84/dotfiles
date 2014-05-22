@@ -23,7 +23,6 @@ NeoBundle 'Shougo/vimproc', {
       \    },
       \ }
 NeoBundle 'tpope/vim-surround'
-NeoBundle 'Shougo/neocomplete'
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'AndrewRadev/switch.vim'
 NeoBundle 'tpope/vim-rails'
@@ -38,7 +37,7 @@ NeoBundle 'git://github.com/Rip-Rip/clang_complete.git'
 NeoBundle 'git://github.com/tokorom/clang_complete-getopts-ios.git'
 NeoBundle 'mattn/gist-vim'
 NeoBundle 'mattn/webapi-vim'
-NeoBundle 'kana/vim-smartinput'
+NeoBundle 'cohama/vim-smartinput'
 NeoBundle 'cohama/vim-smartinput-endwise'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'pangloss/html5.vim'
@@ -46,6 +45,8 @@ NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'sudo.vim'
 NeoBundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
+
+NeoBundle has('lua') ? 'Shougo/neocomplete' : 'Shougo/neocomplcache'
 
 filetype plugin indent on
 
