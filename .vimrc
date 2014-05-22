@@ -58,6 +58,10 @@ set shiftwidth=4        " インデント幅
 set tabstop=4            " tab幅
 set expandtab           " ソフトタブを有効に
 
+" ESCキー2回押しで検索ハイライトを消去
+set hlsearch
+nmap <Esc><Esc> :nohlsearch<CR><Esc>
+
 "" insertモード時、ステータスラインのカラーを変更
 "augroup InsertHook
 "autocmd!
@@ -184,6 +188,7 @@ autocmd BufNewFile,BufRead *.cu set filetype=c "*.cuファイルをCファイル
 set cindent
 
 autocmd BufNewFile,BufRead *.md set filetype=Markdown
+au BufNewFile,BufRead *.tex,*.latex,*.sty,*.dtx,*.ltx,*bbl setf tex
 " autocmd BufNewfile,BufRead *.txt set filetype=hybrid
 
 "if filereadable(expand('~/.vim/settings/filetype.vim'))

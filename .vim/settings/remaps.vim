@@ -66,9 +66,9 @@ noremap :urd :<C-u>Unite rails/db<CR>
 noremap :urdb :<C-u>Unite rails/db<CR>
 noremap :urj :<C-u>Unite rails/javascript<CR>
 noremap :urjs :<C-u>Unite rails/javascript<CR>
-noremap :urss :<C-u>Unite rails/stylesheets<CR>
 noremap :urcss :<C-u>Unite rails/stylesheets<CR>
 noremap :urcn :<C-u>Unite rails/config<CR>
+noremap :urs :<C-u>Unite rails/spec<CR>
 
 nnoremap <silent> ,urc :<C-u>Unite rails/controller<CR>
 nnoremap <silent> ,urco :<C-u>Unite rails/controller<CR>
@@ -82,9 +82,9 @@ nnoremap <silent> ,urd :<C-u>Unite rails/db<CR>
 nnoremap <silent> ,urdb :<C-u>Unite rails/db<CR>
 nnoremap <silent> ,urj :<C-u>Unite rails/javascript<CR>
 nnoremap <silent> ,urjs :<C-u>Unite rails/javascript<CR>
-nnoremap <silent> ,urss :<C-u>Unite rails/stylesheet<CR>
 nnoremap <silent> ,urcss :<C-u>Unite rails/stylesheet<CR>
 nnoremap <silent> ,urcn :<C-u>Unite rails/config<CR>
+nnoremap <silent> ,urs :<C-u>Unite rails/spec<CR>
 
 " ~~~~~~~~~
 " VimFiler remaps

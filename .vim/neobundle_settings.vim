@@ -45,6 +45,7 @@ NeoBundle 'pangloss/html5.vim'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'sudo.vim'
+NeoBundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
 
 filetype plugin indent on
 

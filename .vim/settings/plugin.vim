@@ -84,6 +84,11 @@ autocmd User Rails Rnavcommand config config  -glob=*.*  -suffix= -default=routs
 autocmd User Rails nmap :<C-u>Rcontroller :<C-u>Rc
 autocmd User Rails nmap :<C-u>Rmodel :<C-u>Rm
 autocmd User Rails nmap :<C-u>Rview :<C-u>Rv
+" スニペット競合回避的な？
+autocmd User Rails.view*        NeoSnippetSource ~/.vim/snippets/ruby.rails.view.snip
+autocmd User Rails.controller*  NeoSnippetSource ~/.vim/snippets/ruby.rails.controller.snip
+autocmd User Rails/db/migrate/* NeoSnippetSource ~/.vim/snippets/ruby.rails.migrate.snip
+autocmd User Rails/config/routes.rb NeoSnippetSource ~/.vim/snippets/ruby.rails.route.snip
 
 "
 " emmet
@@ -121,3 +126,18 @@ let g:clang_complete_getopts_ios_default_options = '-fblocks -fobjc-arc -D __IPH
 let g:clang_complete_getopts_ios_sdk_directory = '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk'
 let g:clang_complete_getopts_ios_ignore_directories = ["^\.git", "\.xcodeproj"]
 
+" 
+" vim-latex
+"
+let tex_flavor = 'latex'
+set grepprg=grep\ -nH\ $*
+set shellslash
+let g:Tex_DefaultTargetFormat = 'pdf'
+let g:Tex_CompileRule_dvi = 'platex --interaction=nonstopmode $*'
+let g:Tex_CompileRule_pdf = 'dvipdfmx $*.dvi'
+let g:Tex_FormatDependency_pdf = 'dvi,pdf'
+
+" 
+" vim-smartinput
+"
+call smartinput_endwise#define_default_rules()
