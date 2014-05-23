@@ -157,33 +157,45 @@ call smartinput_endwise#define_default_rules()
 call smartinput#map_to_trigger('i', '<', '<', '<')
 call smartinput#map_to_trigger('i', '>', '>', '>')
 call smartinput#define_rule({
-      \   'at': '\%#', 'char': '<', 'input': '<>',
+      \   'at': '\%#', 'char': '<', 'input': '<><Left>',
       \   'filetype': ['html', 'eruby'],
       \ })
 call smartinput#define_rule({
-      \   'at': '<.*\%#>', 'char': '>', 'input': '',
+      \   'at': '<.*\%#>', 'char': '>', 'input': '<Right>',
       \   'filetype': ['html', 'eruby'],
       \ })
 
 " ERB
 call smartinput#map_to_trigger('i', '%', '%', '%')
 call smartinput#define_rule({
-      \   'at': '<\%#', 'char': '%', 'input': '%%',
+      \   'at': '<\%#>', 'char': '%', 'input': '%%<Left>',
       \   'filetype': ['eruby'],
       \ })
 call smartinput#define_rule({
-      \   'at': '%.*\%#%', 'char': '%', 'input': '',
+      \   'at': '%.*\%#%', 'char': '%', 'input': '<Right>',
       \   'filetype': ['eruby'],
       \ })
 call smartinput#define_rule({
-      \ 'at': '{\%#}',
-      \ 'char': '<Space>',
-      \ 'input': '<Space><Space><Left>'
+      \   'at': '<%\%#%>',
+      \   'char': '<Space>',
+      \   'input': '<Space><Space><Left>',
+      \   'filetype': ['eruby']
       \ })
 call smartinput#define_rule({
-      \ 'at': '{ \%# }',
-      \ 'char': '<BS>',
-      \ 'input': '<Del><BS>'
+      \   'at': '<%=\%#%>',
+      \   'char': '<Space>',
+      \   'input': '<Space><Space><Left>',
+      \   'filetype': ['eruby']
+      \ })
+call smartinput#define_rule({
+      \   'at': '{\%#}',
+      \   'char': '<Space>',
+      \   'input': '<Space><Space><Left>'
+      \ })
+call smartinput#define_rule({
+      \   'at': '{ \%# }',
+      \   'char': '<BS>',
+      \   'input': '<Del><BS>'
       \ })
 
 if neobundle#tap('vim-smartinput')
