@@ -2,6 +2,7 @@
 " プラグイン自体の設定たち
 "
 
+let $DOTVIM = $HOME . '/.vim'
 
 "
 " neocomplete
@@ -19,7 +20,8 @@ if neobundle#is_installed('neocomplete')
     let g:neocomplete#sources#dictionary#dictionaries = {
         \ 'default' : '',
         \ 'vimshell' : $HOME.'/.vimshell_hist',
-        \ 'scheme' : $HOME.'/.gosh_completions'
+        \ 'scheme' : $HOME.'/.gosh_completions',
+        \ 'ruby' : $DOTVIM.'/dict/ruby.dict'
             \ }
 endif
 
@@ -151,6 +153,39 @@ let g:Tex_FormatDependency_pdf = 'dvi,pdf'
 "
 call smartinput_endwise#define_default_rules()
 
+" HTML, ERB
+call smartinput#map_to_trigger('i', '<', '<', '<')
+call smartinput#map_to_trigger('i', '>', '>', '>')
+call smartinput#define_rule({
+      \   'at': '\%#', 'char': '<', 'input': '<>',
+      \   'filetype': ['html', 'eruby'],
+      \ })
+call smartinput#define_rule({
+      \   'at': '<.*\%#>', 'char': '>', 'input': '',
+      \   'filetype': ['html', 'eruby'],
+      \ })
+
+" ERB
+call smartinput#map_to_trigger('i', '%', '%', '%')
+call smartinput#define_rule({
+      \   'at': '<\%#', 'char': '%', 'input': '%%',
+      \   'filetype': ['eruby'],
+      \ })
+call smartinput#define_rule({
+      \   'at': '%.*\%#%', 'char': '%', 'input': '',
+      \   'filetype': ['eruby'],
+      \ })
+call smartinput#define_rule({
+      \ 'at': '{\%#}',
+      \ 'char': '<Space>',
+      \ 'input': '<Space><Space><Left>'
+      \ })
+call smartinput#define_rule({
+      \ 'at': '{ \%# }',
+      \ 'char': '<BS>',
+      \ 'input': '<Del><BS>'
+      \ })
+
 if neobundle#tap('vim-smartinput')
     call neobundle#config({
     \ 'autoload':{
@@ -176,4 +211,4 @@ if neobundle#tap('vim-smartinput-endwise')
     call neobundle#untap()
 endif
 
-echomsg "Plugin Settings Loaded." 
+

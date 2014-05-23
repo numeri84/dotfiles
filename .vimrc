@@ -54,8 +54,8 @@ match ZenkakuSpace /　/
 
 set autoindent          " autoindentを有効にする
 set smartindent         " 新しい行を開始した時にインデントを揃える
-set shiftwidth=4        " インデント幅
-set tabstop=4            " tab幅
+set shiftwidth=2        " インデント幅
+set tabstop=2            " tab幅
 set expandtab           " ソフトタブを有効に
 
 " ESCキー2回押しで検索ハイライトを消去
