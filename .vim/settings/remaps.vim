@@ -59,7 +59,7 @@ noremap :urco :<C-u>Unite rails/controller<CR>
 noremap :urm :<C-u>Unite rails/model<CR>
 noremap :urv :<C-u>Unite rails/view<CR>
 noremap :urh :<C-u>Unite rails/helper<CR>
-noremap :url :<C-u>Unite rails/log<CR>
+noremap :url :<C-u>Unite rails/lib<CR>
 noremap :urb :<C-u>Unite rails/bundle<CR>
 noremap :urr :<C-u>Unite rails/route<CR>
 noremap :urd :<C-u>Unite rails/db<CR>
@@ -75,7 +75,7 @@ nnoremap <silent> ,urco :<C-u>Unite rails/controller<CR>
 nnoremap <silent> ,urm :<C-u>Unite rails/model<CR>
 nnoremap <silent> ,urv :<C-u>Unite rails/view<CR>
 nnoremap <silent> ,urh :<C-u>Unite rails/helper<CR>
-nnoremap <silent> ,url :<C-u>Unite rails/log<CR>
+nnoremap <silent> ,url :<C-u>Unite rails/lib<CR>
 nnoremap <silent> ,urb :<C-u>Unite rails/bundle<CR>
 nnoremap <silent> ,urr :<C-u>Unite rails/route<CR>
 nnoremap <silent> ,urd :<C-u>Unite rails/db<CR>

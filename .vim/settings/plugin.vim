@@ -12,26 +12,31 @@ if neobundle#is_installed('neocomplete')
     let g:neocomplete#enable_ignore_case = 1
     let g:neocomplete#enable_smart_case = 1
     let g:neocomplete#auto_completion_start_length = 3
-    let g:neocomplete#manual_completion_start_length = 0
-    let g:neocomplete#sources#syntax#min_keyword_length = 3
-    let g:neocomplete#min_keyword_length = 2
+    let g:neocomplete#manual_completion_start_length = 3
+    let g:neocomplete#sources#syntax#min_keyword_length = 4
+    let g:neocomplete#min_keyword_length = 4
     let g:neocomplete#enable_prefetch = 1
+    let g:neocomplete#enable_camel_case = 0
+    let g:neocomplete#enable_underbar_completion = 0
+    let g:neocomplete#max_list=10
     let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
     let g:neocomplete#sources#dictionary#dictionaries = {
         \ 'default' : '',
         \ 'vimshell' : $HOME.'/.vimshell_hist',
-        \ 'scheme' : $HOME.'/.gosh_completions',
-        \ 'ruby' : $DOTVIM.'/dict/ruby.dict'
+        \ 'scheme' : $HOME.'/.gosh_completions'
             \ }
+    let g:neocomplete#plugin_disable = {
+      \ 'syntax_complete' : 1
+      \ }
 endif
 
 " 
 " neosnippet
 "
-let s:default_snippet = neobundle#get_neobundle_dir() . '/neosnippet/autoload/neosnippet/snippets' " 本体に入ってるやつ
-let s:my_snippet = '~/.vim/snippets' " 自分のやつ
-let g:neosnippet#snippets_directory = s:my_snippet
-let g:neosnippet#snippets_directory = s:default_snippet . ',' . s:my_snippet
+"let s:default_snippet = neobundle#get_neobundle_dir() . '/neosnippet/autoload/neosnippet/snippets' " 本体に入ってるやつ
+"let s:my_snippet = '~/.vim/snippets' " 自分のやつ
+"let g:neosnippet#snippets_directory = s:my_snippet
+"let g:neosnippet#snippets_directory = s:default_snippet . ',' . s:my_snippet
 
 imap <silent><C-F> <Plug>(neosnippet_expand_or_jump)
 inoremap <silent><C-U> <ESC>:<C-U>Unite snippet<CR>
@@ -123,30 +128,30 @@ end
 nnoremap :nt :NERDTreeToggle<CR>
 let g:NERDTreeShowHidden=1 " 隠しファイルを表示
 
-" 
-" evervim
+"" 
+"" evervim
+""
+"python sys.path.append('/usr/local/lib/python2.7/site-packages')
 "
-python sys.path.append('/usr/local/lib/python2.7/site-packages')
+"let g:evervim_devtoken='S=s43:U=45339f:E=14bba5b1e5a:C=14462a9f25e:P=1cd:A=en-devtoken:V=2:H=3190c5db6bee397dc764040ffe57e4d8'
 
-let g:evervim_devtoken='S=s43:U=45339f:E=14bba5b1e5a:C=14462a9f25e:P=1cd:A=en-devtoken:V=2:H=3190c5db6bee397dc764040ffe57e4d8'
-
-" 
-" clang_complete
-"
-let g:clang_complete_getopts_ios_default_options = '-fblocks -fobjc-arc -D __IPHONE_OS_VERSION_MIN_REQUIRED=40300'
-let g:clang_complete_getopts_ios_sdk_directory = '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk'
-let g:clang_complete_getopts_ios_ignore_directories = ["^\.git", "\.xcodeproj"]
+"" 
+"" clang_complete
+""
+"let g:clang_complete_getopts_ios_default_options = '-fblocks -fobjc-arc -D __IPHONE_OS_VERSION_MIN_REQUIRED=40300'
+"let g:clang_complete_getopts_ios_sdk_directory = '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk'
+"let g:clang_complete_getopts_ios_ignore_directories = ["^\.git", "\.xcodeproj"]
 
 " 
 " vim-latex
 "
-let tex_flavor = 'latex'
-set grepprg=grep\ -nH\ $*
-set shellslash
-let g:Tex_DefaultTargetFormat = 'pdf'
-let g:Tex_CompileRule_dvi = 'platex --interaction=nonstopmode $*'
-let g:Tex_CompileRule_pdf = 'dvipdfmx $*.dvi'
-let g:Tex_FormatDependency_pdf = 'dvi,pdf'
+"let tex_flavor = 'latex'
+"set grepprg=grep\ -nH\ $*
+"set shellslash
+"let g:Tex_DefaultTargetFormat = 'pdf'
+"let g:Tex_CompileRule_dvi = 'platex --interaction=nonstopmode $*'
+"let g:Tex_CompileRule_pdf = 'dvipdfmx $*.dvi'
+"let g:Tex_FormatDependency_pdf = 'dvi,pdf'
 
 " 
 " vim-smartinput

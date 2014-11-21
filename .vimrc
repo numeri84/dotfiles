@@ -25,6 +25,8 @@ set showmode                            " 現在のモードを表示
 set title                               
 set backupskip=/tmp/*,/private/tmp/*    " バックアップしない
 set nobackup                            " 同上
+set ignorecase
+set smartcase
 
 syntax on
 
@@ -45,6 +47,7 @@ set display=uhex                        " 印字不可能文字を16進数で表
 set cursorline                          " カーソル行をハイライト
 set cursorcolumn
 set laststatus=2
+set lazyredraw                          " なんかスクロールが早くなる？
 set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=\ (%v,%l)/%L%8P\
                                         " ステータスラインにエンコーディング、
                                         " フォーマット表示
@@ -143,6 +146,11 @@ nnoremap sO <C-w>=
 nnoremap sN :<C-u>bn<CR>
 nnoremap sP :<C-u>bp<CR>
 nnoremap st :<C-u>tabnew<CR>
+" 表示行移動
+nnoremap j gj
+nnoremap k gk
+nnoremap gj j
+nnoremap gk k
 
 
 
@@ -195,3 +203,5 @@ au BufNewFile,BufRead *.tex,*.latex,*.sty,*.dtx,*.ltx,*bbl setf tex
 "    source ~/.vim/settings/filetype.vim
 "endif
 
+" rubyが重い(´・ω・｀)
+let g:ruby_path=""
