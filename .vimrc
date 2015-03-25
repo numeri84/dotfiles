@@ -11,6 +11,9 @@
 set runtimepath+=~/dotfiles/.vim/settings
 set runtimepath+=~/dotfiles/.vim/after
 
+nnoremap ; :
+nnoremap : ;
+
 set encoding=utf-8                      " デフォルトエンコーディング
 
 set imdisable                           " 挿入モードから抜ける際にIMEをOff
@@ -64,6 +67,7 @@ set expandtab           " ソフトタブを有効に
 " ESCキー2回押しで検索ハイライトを消去
 set hlsearch
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
+nnoremap <Esc><Esc> :nohlsearch<CR><Esc>
 
 "" insertモード時、ステータスラインのカラーを変更
 "augroup InsertHook

@@ -50,6 +50,7 @@ nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
 nnoremap <silent> ,uu :<C-u>Unite file_mru buffer<CR>
 nnoremap sT :<C-u>Unite tab<CR>
+nnoremap <silent> ,ut :<C-u>Unite tab<CR>
 
 " ~~~~~~~~~
 " Unite-rails
