@@ -83,16 +83,16 @@ setopt transient_rprompt
 #---------#
 
 # alias settings
-if [ -f ~/.zshrc.alias ]; then
-    source ~/.zshrc.alias
+if [ -f ~/dotfiles/.zshrc.alias ]; then
+    source ~/dotfiles/.zshrc.alias
 fi
 
 # path settings
-if [ -f ~/.zshrc.env ]; then
-    source ~/.zshrc.env
+if [ -f ~/dotfiles/.zshrc.env ]; then
+    source ~/dotfiles/.zshrc.env
 fi
 
 # prompt settings
-if [ -f ~/.zshrc.prompt ]; then
-    source ~/.zshrc.prompt
+if [ -f ~/dotfiles/.zshrc.prompt ]; then
+    source ~/dotfiles/.zshrc.prompt
 fi
