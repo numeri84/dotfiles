@@ -8,6 +8,9 @@
 
 " ~~~~~~~~~
 " default setting
+nnoremap : ;
+nnoremap ; :
+
 set runtimepath+=~/dotfiles/.vim/settings
 set runtimepath+=~/dotfiles/.vim/after
 
@@ -44,7 +47,6 @@ set listchars=tab:>.,trail:_,extends:>,precedes:<       " 不可視文字の表�
 set display=uhex                        " 印字不可能文字を16進数で表示
 set cursorline                          " カーソル行をハイライト
 set cursorcolumn
-set laststatus=2
 set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=\ (%v,%l)/%L%8P\
                                         " ステータスラインにエンコーディング、
                                         " フォーマット表示
@@ -55,7 +57,7 @@ match ZenkakuSpace /　/
 set autoindent          " autoindentを有効にする
 set smartindent         " 新しい行を開始した時にインデントを揃える
 set shiftwidth=2        " インデント幅
-set tabstop=2            " tab幅
+set tabstop=2           " tab幅
 set expandtab           " ソフトタブを有効に
 
 " ESCキー2回押しで検索ハイライトを消去

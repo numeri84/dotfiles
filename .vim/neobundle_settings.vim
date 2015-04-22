@@ -45,6 +45,13 @@ NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'sudo.vim'
 NeoBundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
+NeoBundle 'elixir-lang/vim-elixir'
+NeoBundle 'carlosgaldino/elixir-snippets'
+
+" for Haskell
+NeoBundle 'dag/vim2hs'
+NeoBundle 'eagletmt/neco-ghc'
+NeoBundle 'eagletmt/ghcmod-vim'
 
 NeoBundle has('lua') ? 'Shougo/neocomplete' : 'Shougo/neocomplcache'
 
