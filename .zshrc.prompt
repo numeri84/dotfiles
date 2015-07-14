@@ -11,7 +11,8 @@ WHITE="%{${fg[white]}%}"
 POH="٩(๑❛ᴗ❛๑)۶ <"
 
 ## prompt
-PROMPT="[%{$fg_bold[green]%}${USER}@%m] ${RESET}${WHITE}${POH} ${RESET}"
+PROMPT="[%{$fg_bold[green]%}${USER}@%m] ${RESET}${WHITE}
+${POH} ${RESET}"
 
 ## rprompt
 

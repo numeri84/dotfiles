@@ -117,6 +117,13 @@ function! s:GetHighlight(hi)
     return hl
 endfunction
 
+"
+" カーソル移動
+nnoremap j gj
+nnoremap k gk
+nnoremap gj j
+nnoremap gk k
+
 " 
 " ウィンドウ分割関連
 nnoremap s <Nop>
@@ -153,22 +160,20 @@ nnoremap st :<C-u>tabnew<CR>
 set nocompatible
 filetype off
 
-set rtp+=~/dotfiles/neobundle.vim
+"set rtp+=~/dotfiles/neobundle.vim
 
 if has('vim_starting')
     "set runtimepath+=~/.vim/bundle/neobundle.vim/
     set runtimepath+=~/dotfiles/.vim/bundle/neobundle.vim/
-    call neobundle#rc(expand('~/.vim/bundle/'))
+    if filereadable(expand('~/.vim/neobundle_settings.vim'))
+        source ~/.vim/neobundle_settings.vim
+    endif
     
 endif
 
 " ~~~~~~~~~
 " plugin settings
 "
-if filereadable(expand('~/.vim/neobundle_settings.vim'))
-    source ~/.vim/neobundle_settings.vim
-endif
-
 if filereadable(expand('~/.vim/settings/plugin.vim'))
     source ~/.vim/settings/plugin.vim
 endif
@@ -185,13 +190,6 @@ endif
 
 filetype on
 filetype plugin on
-autocmd FileType c,cpp
-autocmd BufNewFile,BufRead *.cu set filetype=c "*.cuファイルをCファイルとして認識
-set cindent
-
-autocmd BufNewFile,BufRead *.md set filetype=Markdown
-au BufNewFile,BufRead *.tex,*.latex,*.sty,*.dtx,*.ltx,*bbl setf tex
-" autocmd BufNewfile,BufRead *.txt set filetype=hybrid
 
 "if filereadable(expand('~/.vim/settings/filetype.vim'))
 "    source ~/.vim/settings/filetype.vim

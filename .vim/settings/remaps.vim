@@ -41,6 +41,10 @@ elseif neobundle#is_installed('neocomplcache')
     inoremap <expr><C-e> neocomplcache#cancel_popup()
 endif
 
+" ~~~~~~~~~
+" vimfiler remaps
+nnoremap <silent> ,vf :<C-u>VimFiler<CR>
+nnoremap <silent> ,ve :<C-u>VimFilerExplorer<CR>
 
 " ~~~~~~~~~
 " Unite.vim remaps
@@ -116,7 +120,10 @@ inoremap <C-f> <Right>
 inoremap <C-h> <BS>
 inoremap <C-b> <Left>
 inoremap <C-d> <Del>
-inoremap <C-e> <Esc>A
+inoremap <C-e> <END>
+inoremap <C-a> <HOME>
+
+inoremap <C-Space> <NOP>
 
 " <Space><Space>で.vimrc再読み込み
 nnoremap <Space><Space> :source ~/.vimrc<CR>

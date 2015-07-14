@@ -1,5 +1,6 @@
 alias _r='exec $SHELL'
 alias reload='exec $SHELL'
+alias vi=vim
 
 ## ls
 alias ls='ls -F'

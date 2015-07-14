@@ -1,6 +1,8 @@
 "
 " NeoBundleでプラグインうんたらかんたら
 
+call neobundle#begin(expand('~/.vim/bundle/'))
+
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
@@ -40,7 +42,6 @@ NeoBundle 'mattn/webapi-vim'
 NeoBundle 'cohama/vim-smartinput'
 NeoBundle 'cohama/vim-smartinput-endwise'
 NeoBundle 'hail2u/vim-css3-syntax'
-NeoBundle 'pangloss/html5.vim'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'sudo.vim'
@@ -53,9 +54,16 @@ NeoBundle 'dag/vim2hs'
 NeoBundle 'eagletmt/neco-ghc'
 NeoBundle 'eagletmt/ghcmod-vim'
 
-NeoBundle has('lua') ? 'Shougo/neocomplete' : 'Shougo/neocomplcache'
+" for scala
+NeoBundle 'derekwyatt/vim-scala'
+
+NeoBundle has('lua') ? 'Shougo/neocomplete.vim' : 'Shougo/neocomplcache'
+
+call neobundle#end()
 
 filetype plugin indent on
+
+NeoBundleCheck
 
 if neobundle#exists_not_installed_bundles()
 	echomsg 'Not installed bundles : ' .

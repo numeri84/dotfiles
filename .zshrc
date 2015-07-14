@@ -96,3 +96,8 @@ fi
 if [ -f ~/dotfiles/.zshrc.prompt ]; then
     source ~/dotfiles/.zshrc.prompt
 fi
+
+# local settings
+if [ -f ~/dotfiles/.zshrc.local ]; then
+    source ~/dotfiles/.zshrc.local
+fi
