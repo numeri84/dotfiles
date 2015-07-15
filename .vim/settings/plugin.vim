@@ -55,7 +55,7 @@ let g:unite_source_file_mru_limit = 200
 "
 let g:vimfiler_as_default_explorer = 1
 autocmd! FileType vimfiler call g:my_vimfiler_settings()
-function! g:my_vimfiler_settings()
+function! s:my_vimfiler_settings()
     nmap <buffer><expr><CR> vimfiler#smart_cursor_map("\<Plug>(vimfiler_expand_tree)", "\<Plug>(vimfiler_edit_file)")
 endfunction
 
