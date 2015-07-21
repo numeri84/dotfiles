@@ -38,10 +38,12 @@ endif
 "let g:neosnippet#snippets_directory = s:my_snippet
 "let g:neosnippet#snippets_directory = s:default_snippet . ',' . s:my_snippet
 
-imap <silent><C-F> <Plug>(neosnippet_expand_or_jump)
 inoremap <silent><C-U> <ESC>:<C-U>Unite snippet<CR>
 nnoremap <silent><Space>e :<C-U>NeoSnippetEdit -split<CR>
-smap <silent><C-F> <Plug>(neosnippet_register_oneshot_snippet)
+imap <silent><C-s> <Plug>(neosnippet_expand_or_jump)
+smap <silent><C-s> <Plug>(neosnippet_expand_or_jump)
+smap <silent><C-s> <Plug>(neosnippet_register_oneshot_snippet)
+
 
 "
 " Unite

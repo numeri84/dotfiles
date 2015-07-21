@@ -12,6 +12,9 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 export LANG=ja_JP.UTF-8
 export LESSCHARSET=utf-8
 
+# Ctrl-sで出力停止させない
+stty stop undef
+
 # less設定
 export LESS='-R'
 
