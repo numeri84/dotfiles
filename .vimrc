@@ -59,6 +59,7 @@ set smartindent         " 新しい行を開始した時にインデントを揃
 set shiftwidth=2        " インデント幅
 set tabstop=2           " tab幅
 set expandtab           " ソフトタブを有効に
+set backspace=indent,eol,start  " バックスペースでインデントや改行を削除
 
 " ESCキー2回押しで検索ハイライトを消去
 set hlsearch

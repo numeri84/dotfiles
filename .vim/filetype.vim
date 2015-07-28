@@ -4,6 +4,7 @@ endif
 
 augroup filetypedetect
     au BufNewFile,BufRead *.php   setlocal tabstop=4 shiftwidth=4
+    au BufNewFile,BufRead *.js   setlocal tabstop=4 shiftwidth=4
     au FileType c,cpp
     au BufNewFile,BufRead *.cu set filetype=c "*.cuファイルをCファイルとして認識
     set cindent

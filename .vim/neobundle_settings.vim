@@ -57,7 +57,7 @@ NeoBundle 'eagletmt/ghcmod-vim'
 " for scala
 NeoBundle 'derekwyatt/vim-scala'
 
-NeoBundle has('lua') ? 'Shougo/neocomplete.vim' : 'Shougo/neocomplcache'
+NeoBundle has('lua') ? 'Shougo/neocomplete' : 'Shougo/neocomplcache'
 
 call neobundle#end()
 
