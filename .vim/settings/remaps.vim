@@ -50,7 +50,7 @@ nnoremap <silent> ,ve :<C-u>VimFilerExplorer<CR>
 " Unite.vim remaps
 nnoremap <silent> ,uy :<C-u>Unite history/yank<CR>
 nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
-nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file file/new<CR>
+nnoremap <silent> ,uf :<C-u>UniteWithBufferDir file_mru buffer file file/new -buffer-name=files -start-insert<CR>
 nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
 nnoremap <silent> ,uu :<C-u>Unite file_mru buffer<CR>
 nnoremap sT :<C-u>Unite tab<CR>
@@ -89,6 +89,10 @@ nnoremap <silent> ,urjs :<C-u>Unite rails/javascript<CR>
 nnoremap <silent> ,urcss :<C-u>Unite rails/stylesheet<CR>
 nnoremap <silent> ,urcn :<C-u>Unite rails/config<CR>
 nnoremap <silent> ,urs :<C-u>Unite rails/spec<CR>
+
+" ~~~~~~~~~
+" NERDTree remaps
+nnoremap <silent> ,nt :NERDTreeToggle<CR>
 
 " ~~~~~~~~~
 " VimFiler remaps

@@ -35,17 +35,28 @@ NeoBundle 'thinca/vim-showtime'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'kakkyz81/evervim'
+
+"" clang
 NeoBundle 'git://github.com/Rip-Rip/clang_complete.git'
 NeoBundle 'git://github.com/tokorom/clang_complete-getopts-ios.git'
+
 NeoBundle 'mattn/gist-vim'
 NeoBundle 'mattn/webapi-vim'
 NeoBundle 'cohama/vim-smartinput'
 NeoBundle 'cohama/vim-smartinput-endwise'
 NeoBundle 'hail2u/vim-css3-syntax'
+
+"" js
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'moll/vim-node'
+NeoBundle 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
+NeoBundle 'mattn/jscomplete-vim'
+
 NeoBundle 'sudo.vim'
 NeoBundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
+
+"" elixir
 NeoBundle 'elixir-lang/vim-elixir'
 NeoBundle 'carlosgaldino/elixir-snippets'
 

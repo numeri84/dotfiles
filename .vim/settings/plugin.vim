@@ -151,6 +151,12 @@ let g:Tex_CompileRule_dvi = 'platex --interaction=nonstopmode $*'
 let g:Tex_CompileRule_pdf = 'dvipdfmx $*.dvi'
 let g:Tex_FormatDependency_pdf = 'dvi,pdf'
 
+"
+" jscomplete-vim
+"
+autocmd FileType javascript
+  \ :setl omnifunc=jscomplete#CompleteJS
+
 " 
 " vim-smartinput
 "
@@ -161,34 +167,34 @@ call smartinput#map_to_trigger('i', '<', '<', '<')
 call smartinput#map_to_trigger('i', '>', '>', '>')
 call smartinput#define_rule({
       \   'at': '\%#', 'char': '<', 'input': '<><Left>',
-      \   'filetype': ['html', 'eruby'],
+      \   'filetype': ['html', 'eruby', 'eelixir'],
       \ })
 call smartinput#define_rule({
       \   'at': '<.*\%#>', 'char': '>', 'input': '<Right>',
-      \   'filetype': ['html', 'eruby'],
+      \   'filetype': ['html', 'eruby', 'eelixir'],
       \ })
 
 " ERB
 call smartinput#map_to_trigger('i', '%', '%', '%')
 call smartinput#define_rule({
       \   'at': '<\%#>', 'char': '%', 'input': '%%<Left>',
-      \   'filetype': ['eruby'],
+      \   'filetype': ['eruby', 'eelixir'],
       \ })
 call smartinput#define_rule({
       \   'at': '%.*\%#%', 'char': '%', 'input': '<Right>',
-      \   'filetype': ['eruby'],
+      \   'filetype': ['eruby', 'eelixir'],
       \ })
 call smartinput#define_rule({
       \   'at': '<%\%#%>',
       \   'char': '<Space>',
       \   'input': '<Space><Space><Left>',
-      \   'filetype': ['eruby']
+      \   'filetype': ['eruby', 'eelixir']
       \ })
 call smartinput#define_rule({
       \   'at': '<%=\%#%>',
       \   'char': '<Space>',
       \   'input': '<Space><Space><Left>',
-      \   'filetype': ['eruby']
+      \   'filetype': ['eruby', 'eelixir']
       \ })
 call smartinput#define_rule({
       \   'at': '{\%#}',
@@ -199,6 +205,14 @@ call smartinput#define_rule({
       \   'at': '{ \%# }',
       \   'char': '<BS>',
       \   'input': '<Del><BS>'
+      \ })
+
+" elixir
+call smartinput#define_rule({
+      \   'at': '\%(^\s*#.*\)\@<!do\%(\s*|\k\+|\)\?\s*\%#',
+      \   'char': '<CR>',
+      \   'input': '<CR>end<Esc>O',
+      \   'filetype': ['elixir']
       \ })
 
 if neobundle#tap('vim-smartinput')
